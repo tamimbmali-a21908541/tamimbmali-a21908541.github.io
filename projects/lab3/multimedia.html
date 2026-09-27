@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multimédia | Alepo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .secao-video-fundo {
+        position: relative;
+        overflow: hidden;
+        background-color: #222;
+        color: #fff;
+      }
+
+      .video-fundo {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .secao-video-fundo h3 {
+        position: relative;
+        color: #fff;
+        text-shadow: 2px 2px 8px #222;
+      }
+
+      .secao-parallax {
+        align-items: center;
+        color: #fff;
+        text-align: center;
+        background-image:
+          linear-gradient(rgb(0 0 0 / 45%), rgb(0 0 0 / 45%)),
+          url("images/panorama.jpeg");
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+
+      .multimedia-main {
+        padding: 0;
+      }
+
+      .introducao {
+        padding: 24px;
+        background-color: #fff;
+      }
+
+      .atalhos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .secao {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px;
+      }
+
+      .destaque {
+        position: relative;
+        display: block;
+        padding: 0;
+        background-color: #222;
+      }
+
+      .destaque img {
+        display: block;
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+      }
+
+      .destaque h3 {
+        position: absolute;
+        bottom: 8%;
+        left: 5%;
+        max-width: 90%;
+        margin: 0;
+        color: #fff;
+        font-size: 5vw;
+        text-shadow: 2px 2px 8px #222;
+      }
+
+      .secao-fotografias {
+        background-color: #f3ebdb;
+      }
+
+      .fotografias {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .fotografias img {
+        width: 120px;
+        height: 80px;
+        border-radius: 20px;
+        transition: transform 250ms ease;
+      }
+
+      .fotografias img:hover {
+        transform: scale(1.08);
+      }
+
+      .secao-video {
+        background-color: #e6edf7;
+      }
+
+      .video {
+        width: 100%;
+        max-width: 900px;
+        aspect-ratio: 16 / 9;
+        height: auto;
+      }
+
+      .secao-poema {
+        background-color: #edf2e8;
+      }
+
+      .poema {
+        padding: 10px;
+      }
+
+      .poema p {
+        margin: 5px 0;
+      }
+
+      .poema p:nth-child(even) {
+        color: #3949ab;
+        font-style: italic;
+      }
+
+      @media (width <= 650px) {
+        .secao {
+          padding: 24px;
+        }
+
+        .destaque {
+          padding: 0;
+        }
+
+        .destaque h3 {
+          font-size: 8vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Alepo</h1>
+    </header>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="local.html">Localização</a>
+      <a href="multimedia.html">Multimédia</a>
+      <a href="info.html">Informação</a>
+      <a href="quizz.html">Quizz</a>
+      <a href="viagem.html">Viagem</a>
+    </nav>
+
+    <div class="imagens">
+      <img src="images/cidadela.jpeg" alt="Cidadela de Alepo" />
+      <img src="images/mesquita.jpeg" alt="Mesquita de Alepo" />
+      <img src="images/panorama.jpeg" alt="Vista de Alepo" />
+    </div>
+
+    <main class="multimedia-main">
+      <div class="introducao">
+        <h2>Multimédia</h2>
+        <p>Nesta página encontra conteúdos multimédia sobre Alepo.</p>
+        <p class="atalhos">
+          <a href="#destaque">Destaque</a>
+          <a href="#video-fundo">Vídeo de fundo</a>
+          <a href="#fotografias">Fotografias</a>
+          <a href="#video">Vídeo</a>
+          <a href="#parallax">Parallax</a>
+          <a href="#poema">Poema</a>
+        </p>
+      </div>
+
+      <section class="secao destaque">
+        <img src="images/cidadela.jpeg" alt="Cidadela de Alepo" />
+        <h3 id="destaque">Alepo: cada pedra conta uma história.</h3>
+      </section>
+      <section class="secao secao-video-fundo">
+        <video
+          class="video-fundo"
+          autoplay
+          muted
+          loop
+          playsinline
+          aria-hidden="true"
+        >
+          <source
+            src="https://cdn.pixabay.com/video/2026/07/12/363550_large.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <h3 id="video-fundo">Alepo em movimento</h3>
+      </section>
+      <section class="secao secao-fotografias">
+        <h3 id="fotografias">Fotografias</h3>
+        <div class="fotografias">
+          <img src="images/cidadela.jpeg" alt="Cidadela de Alepo" />
+          <img src="images/mesquita.jpeg" alt="Mesquita de Alepo" />
+          <img src="images/souk.jpeg" alt="Mercado antigo de Alepo" />
+          <img src="images/casas.jpeg" alt="Casas antigas de Alepo" />
+          <img src="images/panorama.jpeg" alt="Vista de Alepo" />
+          <img src="images/rua.jpeg" alt="Rua de Alepo" />
+          <img src="images/centro.jpeg" alt="Centro histórico de Alepo" />
+          <img src="images/patio.jpeg" alt="Pátio em Alepo" />
+        </div>
+      </section>
+
+      <section class="secao secao-video">
+        <h3 id="video">Vídeo</h3>
+        <iframe
+          class="video"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/-ix24RlpRn8?si=k62H8i0uk7kP3bs-"
+          title="Vídeo sobre Alepo"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+            web-share;
+          "
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </section>
+      <section class="secao secao-parallax">
+        <h3 id="parallax">Alepo, uma cidade de histórias</h3>
+      </section>
+      <section class="secao secao-poema">
+        <h3 id="poema">Poesia</h3>
+        <div class="poema">
+          <p>Alepo guarda histórias nas suas ruas,</p>
+          <p>Entre pedras antigas e manhãs azuis.</p>
+          <p>O vento leva memórias pela cidade,</p>
+          <p>E cada esquina fala de saudade.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>DIW 2026</p>
+    </footer>
+  </body>
+</html>

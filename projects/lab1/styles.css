@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #1f2633;
+  background-color: #f7f6f2;
+}
+
+.container {
+  width: min(1100px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 320px;
+  padding: 50px 0;
+  color: #fff;
+  background-color: #1f2633;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.hero h1 {
+  margin: 12px 0;
+  font-size: clamp(36px, 6vw, 64px);
+  line-height: 1.1;
+}
+
+.hero-text {
+  font-size: 20px;
+}
+
+.hero nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.hero nav a {
+  display: inline-block;
+  padding: 10px 16px;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.hero nav a:hover,
+.hero nav a:focus-visible {
+  background-color: #fff;
+  color: #1f2633;
+}
+
+main.container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.card {
+  min-width: 0;
+  padding: 24px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card a {
+  color: #176c46;
+}
+
+.tech-list {
+  padding-left: 22px;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #176c46;
+}
+
+.illustration {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.illustration img {
+  display: block;
+  width: 100%;
+  max-width: 550px;
+  max-height: 350px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.illustration figcaption {
+  margin-top: 10px;
+}
+
+footer {
+  padding: 20px;
+  color: #fff;
+  background-color: #1f2633;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  main.container {
+    grid-template-columns: 1fr;
+  }
+
+  .illustration {
+    grid-column: auto;
+  }
+}
