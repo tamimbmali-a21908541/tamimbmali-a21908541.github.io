@@ -52,6 +52,10 @@ body {
   margin-top: 25px;
 }
 
+.card a {
+  color: #176c46;
+}
+
 .hero nav a {
   display: inline-block;
   padding: 10px 16px;
@@ -87,9 +91,6 @@ main.container {
   margin-top: 0;
 }
 
-.card a {
-  color: #176c46;
-}
 
 .tech-list {
   padding-left: 22px;
@@ -133,7 +134,7 @@ footer p {
   margin: 0;
 }
 
-@media (max-width: 700px) {
+@media (width <= 700px) {
   main.container {
     grid-template-columns: 1fr;
   }

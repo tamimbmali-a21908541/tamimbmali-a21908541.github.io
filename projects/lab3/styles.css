@@ -112,6 +112,6 @@ footer p {
   }
 
   .secao-parallax {
-  background-attachment: scroll;
-}
+    background-attachment: scroll;
+  }
 }

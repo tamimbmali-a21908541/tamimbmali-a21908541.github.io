@@ -77,6 +77,10 @@ section {
   line-height: 1.1;
 }
 
+footer p {
+  margin: 0;
+}
+
 .hero-conteudo p {
   font-size: 20px;
 }
@@ -163,10 +167,6 @@ footer {
   color: #fff;
   background-color: #1f2633;
   text-align: center;
-}
-
-footer p {
-  margin: 0;
 }
 
 @media (width <= 720px) {
