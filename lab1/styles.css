@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #253047;
+  background-color: #fff;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero {
+  color: white;
+  background-color: #3949ab;
+  padding: 30px 0;
+}
+
+footer {
+  padding: 15px;
+  color: white;
+  background-color: #3949ab;
+  text-align: center;
+}

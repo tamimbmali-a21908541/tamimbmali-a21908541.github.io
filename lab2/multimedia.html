@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multimédia | Alepo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .fotografias {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .fotografias img {
+        width: 120px;
+        height: 80px;
+        border-radius: 20px;
+      }
+
+      .video {
+        max-width: 100%;
+      }
+
+      .poema {
+        padding: 10px;
+      }
+
+      .poema p {
+        margin: 5px 0;
+      }
+
+      .poema p:nth-child(even) {
+        color: #3949ab;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Alepo</h1>
+    </header>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="local.html">Localização</a>
+      <a href="multimedia.html">Multimédia</a>
+      <a href="info.html">Informação</a>
+      <a href="quizz.html">Quizz</a>
+      <a href="viagem.html">Viagem</a>
+    </nav>
+
+    <div class="imagens">
+      <img src="images/cidadela.jpeg" alt="Cidadela de Alepo" />
+      <img src="images/mesquita.jpeg" alt="Mesquita de Alepo" />
+      <img src="images/panorama.jpeg" alt="Vista de Alepo" />
+    </div>
+
+    <main>
+      <h2>Multimédia</h2>
+      <p>Nesta página encontra conteúdos multimédia sobre Alepo.</p>
+      <p>
+        <a href="#fotografias">Fotografias</a>
+        <a href="#video">Vídeo</a>
+        <a href="#poema">Poema</a>
+      </p>
+
+      <section>
+        <h3 id="fotografias">Fotografias</h3>
+        <div class="fotografias">
+          <img src="images/cidadela.jpeg" alt="Cidadela de Alepo" />
+          <img src="images/mesquita.jpeg" alt="Mesquita de Alepo" />
+          <img src="images/souk.jpeg" alt="Mercado antigo de Alepo" />
+          <img src="images/casas.jpeg" alt="Casas antigas de Alepo" />
+          <img src="images/panorama.jpeg" alt="Vista de Alepo" />
+          <img src="images/rua.jpeg" alt="Rua de Alepo" />
+          <img src="images/centro.jpeg" alt="Centro histórico de Alepo" />
+          <img src="images/patio.jpeg" alt="Pátio em Alepo" />
+        </div>
+      </section>
+
+      <section>
+        <h3 id="video">Vídeo</h3>
+        <iframe
+          class="video"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/-ix24RlpRn8?si=k62H8i0uk7kP3bs-"
+          title="Vídeo sobre Alepo"
+          frameborder="0"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+            web-share;
+          "
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </section>
+
+      <section>
+        <h3 id="poema">Poesia</h3>
+        <div class="poema">
+          <p>Alepo guarda histórias nas suas ruas,</p>
+          <p>Entre pedras antigas e manhãs azuis.</p>
+          <p>O vento leva memórias pela cidade,</p>
+          <p>E cada esquina fala de saudade.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>DIW 2026</p>
+    </footer>
+  </body>
+</html>
