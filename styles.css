@@ -22,15 +22,6 @@ h1 {
   font-size: 40px;
 }
 
-.button {
-  display: inline-block;
-  padding: 10px 15px;
-  color: #3949ab;
-  background-color: white;
-  text-decoration: none;
-  border-radius: 8px;
-}
-
 .card {
   margin: 20px 0;
   padding: 20px;
