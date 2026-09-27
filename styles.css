@@ -1,3 +1,58 @@
 body {
-  background-color: #b3b3b3;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #253047;
+  background-color: #f4f7fb;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.hero {
+  padding: 40px 0;
+  color: white;
+  background-color: #3949ab;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 15px;
+  color: #3949ab;
+  background-color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.card {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.tech-list li {
+  margin-bottom: 8px;
+}
+
+.illustration {
+  text-align: center;
+}
+
+.illustration img {
+  max-width: 100%;
+}
+
+footer {
+  padding: 20px;
+  color: white;
+  background-color: #3949ab;
+  text-align: center;
 }
