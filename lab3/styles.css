@@ -121,6 +121,7 @@ footer p {
 .pagina-info {
   display: grid; /* حوّل الصفحة إلى Grid. */
   grid-template-columns: minmax(0, 4fr) minmax(0, 3fr) minmax(0, 3fr);
+
   /* ثلاثة أعمدة بحصص 4 و3 و3. */
   grid-template-areas:
     "cab cab cab"
@@ -128,6 +129,7 @@ footer p {
     "faixa faixa faixa"
     "conteudo conteudo conteudo"
     "rod rod rod";
+
   /* حدد مواضع الرأس والقائمة والصور والمحتوى والتذييل. */
   gap: 12px; /* فراغ بين المناطق. */
 }
@@ -155,12 +157,14 @@ footer p {
   grid-area: conteudo; /* موضع main في الشبكة الخارجية. */
   display: grid; /* أنشئ شبكة ثانية للبطاقات. */
   grid-template-columns: minmax(0, 4fr) minmax(0, 3fr) minmax(0, 3fr);
+
   /* أعمدة بحصص 4 و3 و3. */
   grid-template-areas:
     "hero central central"
     "sidebar central central"
     "recent central central"
     "galeria galeria extras";
+
   /* حدد مكان كل بطاقة. */
   gap: 12px; /* فراغ بين البطاقات. */
   min-width: 0; /* اسمح للمحتوى بالانكماش. */
@@ -228,6 +232,7 @@ footer p {
 .pagina-info .galeria {
   display: grid; /* رتّب الصور باستخدام Grid. */
   grid-template-columns: repeat(3, minmax(0, 1fr));
+
   /* ثلاثة أعمدة متساوية. */
   gap: 12px; /* فراغ بين الصور. */
 }
@@ -269,6 +274,7 @@ footer p {
 
   .pagina-info .galeria {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+
     /* عمودان للصور بدل ثلاثة. */
   }
 }
@@ -428,6 +434,7 @@ footer p {
   background-image:
     linear-gradient(rgb(0 0 0 / 45%), rgb(0 0 0 / 45%)),
     url("images/panorama.jpeg");
+
   /* طبقة داكنة فوق صورة panorama لتسهيل قراءة النص. */
   background-position: center; /* وسّط الصورة. */
   background-size: cover; /* املأ القسم بالصورة. */
@@ -466,6 +473,7 @@ footer p {
 
   .pagina-multimedia .secao-parallax {
     background-attachment: scroll;
+
     /* حرّك الصورة مع الصفحة بدل تثبيتها على الهاتف. */
   }
 }
