@@ -5,41 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Localização | Alepo</title>
     <link rel="stylesheet" href="styles.css" />
-    <style>
-      .localizacao-conteudo {
-        display: flex;
-        align-items: flex-start;
-        gap: 24px;
-      }
-
-      .localizacao-conteudo p {
-        flex: 1 1 40%;
-        margin-top: 0;
-      }
-
-      .localizacao-conteudo iframe {
-        flex: 1 1 60%;
-        min-width: 0;
-      }
-
-      @media (width <= 650px) {
-        .localizacao-conteudo {
-          flex-direction: column;
-        }
-
-        .localizacao-conteudo iframe {
-          width: 100%;
-          height: 360px;
-        }
-      }
-    </style>
   </head>
-  <body>
+
+  <body class="pagina-localizacao">
     <header>
       <h1>Alepo</h1>
     </header>
 
-    <nav>
+    <nav aria-label="Menu principal">
       <a href="index.html">Home</a>
       <a href="local.html">Localização</a>
       <a href="multimedia.html">Multimédia</a>
@@ -72,7 +45,8 @@
           loading="lazy"
           referrerpolicy="strict-origin-when-cross-origin"
           title="Mapa de Alepo"
-        ></iframe>
+        >
+        </iframe>
       </div>
     </main>
 

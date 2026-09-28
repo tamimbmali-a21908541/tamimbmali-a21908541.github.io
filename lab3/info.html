@@ -5,153 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Informações | Alepo</title>
     <link rel="stylesheet" href="styles.css" />
-    <style>
-      .pagina-info {
-        display: grid;
-        grid-template-columns: 4fr 3fr 3fr;
-        grid-template-areas:
-          "cab cab cab"
-          "menu menu menu"
-          "faixa faixa faixa"
-          "conteudo conteudo conteudo"
-          "rod rod rod";
-        gap: 12px;
-      }
-
-      .pagina-info > header {
-        grid-area: cab;
-      }
-
-      .pagina-info > nav {
-        grid-area: menu;
-      }
-
-      .pagina-info > .imagens {
-        grid-area: faixa;
-        margin-top: 0;
-      }
-
-      .pagina-info > footer {
-        grid-area: rod;
-      }
-
-      .pagina-info main {
-        grid-area: conteudo;
-        display: grid;
-        grid-template-columns: minmax(0, 4fr) minmax(0, 3fr) minmax(0, 3fr);
-        grid-template-areas:
-          "hero central central"
-          "sidebar central central"
-          "recent central central"
-          "galeria galeria extras";
-        gap: 12px;
-        margin: 0;
-        padding: 0;
-        background-color: transparent;
-      }
-
-      .bloco {
-        min-width: 0;
-        padding: 20px;
-        background-color: #fff;
-      }
-
-      .hero-info {
-        grid-area: hero;
-      }
-
-      .conteudo-principal {
-        grid-area: central;
-        overflow-x: auto;
-      }
-
-      .barra-lateral {
-        grid-area: sidebar;
-      }
-
-      .recentes {
-        grid-area: recent;
-      }
-
-      .imagens-relacionadas {
-        grid-area: galeria;
-      }
-
-      .curiosidades {
-        grid-area: extras;
-      }
-
-      table {
-        border-collapse: collapse;
-        width: 100%;
-      }
-
-      th,
-      td {
-        border: 1px solid #777;
-        padding: 8px;
-        text-align: left;
-      }
-
-      th {
-        color: #3949ab;
-      }
-
-      td {
-        color: #253047;
-      }
-
-      .galeria {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
-      }
-
-      .galeria img {
-        display: block;
-        width: 100%;
-        height: 150px;
-        object-fit: cover;
-      }
-
-      .espaco-vazio {
-        min-height: 150px;
-      }
-
-      @media (width <= 760px) {
-        .pagina-info {
-          grid-template-columns: 1fr;
-          grid-template-areas:
-            "cab"
-            "menu"
-            "faixa"
-            "conteudo"
-            "rod";
-        }
-
-        .pagina-info main {
-          grid-template-columns: 1fr;
-          grid-template-areas:
-            "hero"
-            "central"
-            "sidebar"
-            "recent"
-            "galeria"
-            "extras";
-        }
-
-        .galeria {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
-    </style>
   </head>
+
   <body class="pagina-info">
     <header>
       <h1>Alepo</h1>
     </header>
 
-    <nav>
+    <nav aria-label="Menu principal">
       <a href="index.html">Home</a>
       <a href="local.html">Localização</a>
       <a href="multimedia.html">Multimédia</a>
@@ -174,6 +35,7 @@
 
       <section class="bloco conteudo-principal">
         <h3>Dados sobre Alepo</h3>
+
         <table>
           <thead>
             <tr>
@@ -185,6 +47,7 @@
               <th scope="col">Informação</th>
             </tr>
           </thead>
+
           <tbody>
             <tr>
               <th rowspan="3" scope="rowgroup">Geografia</th>
@@ -228,6 +91,7 @@
 
       <section class="bloco imagens-relacionadas">
         <h3>Imagens relacionadas</h3>
+
         <div class="galeria">
           <img src="images/cidadela.jpeg" alt="Cidadela de Alepo" />
           <img src="images/mesquita.jpeg" alt="Mesquita de Alepo" />
