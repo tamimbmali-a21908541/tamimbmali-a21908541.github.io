@@ -45,7 +45,9 @@ main {
   width: min(100%, 300px);
   margin-top: 12px;
   border-radius: 10px;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
 #contador {
@@ -73,5 +75,7 @@ button:hover {
   padding: 16px;
   border-radius: 8px;
   background: #e8e4fa;
-  transition: background 0.3s, color 0.3s;
+  transition:
+    background 0.3s,
+    color 0.3s;
 }
