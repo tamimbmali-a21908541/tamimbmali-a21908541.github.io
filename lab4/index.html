@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laboratório de eventos</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Laboratório de eventos</h1>
+      <p id="mensagem">Experimenta os elementos da página com o rato.</p>
+    </header>
+    <main>
+      <section class="painel" onmousemove="mostrarCoordenadas(event)">
+        <h2>Explora</h2>
+        <p id="coordenadas">Move o rato nesta área.</p>
+        <img
+          id="imagem"
+          src="images/lab4_debug.png"
+          alt="Imagem do laboratório"
+          onmouseover="destacarImagem()"
+          onmouseout="normalizarImagem()"
+        />
+      </section>
+      <section class="cores">
+        <h2>Pinta-me!</h2>
+        <p id="caixa-cor">Escolhe uma cor.</p>
+        <button type="button" onclick="pintar('red')">Red</button>
+        <button type="button" onclick="pintar('green')">Green</button>
+        <button type="button" onclick="pintar('blue')">Blue</button>
+      </section>
+      <section class="acoes">
+        <h2>Contador</h2>
+        <p id="contador">0</p>
+        <button type="button" onclick="aumentarContador()">Adicionar</button>
+        <button type="button" ondblclick="reiniciarContador()">
+          Duplo clique para reiniciar
+        </button>
+      </section>
+    </main>
+    <footer>
+      <p>DIW — página com eventos de rato</p>
+    </footer>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
