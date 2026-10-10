@@ -17,44 +17,49 @@ footer {
   color: white;
 }
 
-header h1,
-main h2 {
-  margin-top: 0;
+header h1 {
+  margin: 0 0 8px;
+}
+
+header p,
+footer p {
+  margin: 0;
 }
 
 main {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  flex-wrap: wrap;
   padding: 36px 20px;
 }
 
-.painel,
-.cores,
-.acoes {
-  width: min(420px, 100%);
-  padding: 24px;
-  text-align: center;
+ol {
+  width: min(520px, 100%);
+  margin: 0 auto;
+  padding: 0;
+  list-style-position: inside;
+}
+
+li {
+  margin-bottom: 16px;
+  padding: 18px 24px;
   background: white;
   border-radius: 14px;
   box-shadow: 0 4px 14px #20303c22;
 }
 
-#imagem {
-  width: min(100%, 300px);
+li div {
   margin-top: 12px;
-  border-radius: 10px;
-  transition:
-    transform 0.2s,
-    box-shadow 0.2s;
 }
 
-#contador {
-  margin: 16px 0;
-  font-size: 4rem;
+form {
+  display: inline;
+}
+
+a {
+  color: #215a6d;
   font-weight: bold;
-  color: #d66631;
+}
+
+a:hover {
+  color: #a8491e;
 }
 
 button {
@@ -71,11 +76,40 @@ button:hover {
   background: #a8491e;
 }
 
-#caixa-cor {
-  padding: 16px;
-  border-radius: 8px;
-  background: #e8e4fa;
-  transition:
-    background 0.3s,
-    color 0.3s;
+input,
+select {
+  padding: 8px 10px;
+  border: 1px solid #215a6d;
+  border-radius: 6px;
+}
+
+#passa {
+  font-weight: bold;
+}
+
+#contador,
+#automatico,
+#guardado {
+  font-weight: bold;
+  color: #d66631;
+}
+
+#ola {
+  margin: 12px 0 0;
+  font-weight: bold;
+}
+
+#caixa-flex {
+  display: flex;
+  gap: 10px;
+  height: 200px;
+  background: grey;
+  border-radius: 14px;
+}
+
+.bola {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #d66631;
 }

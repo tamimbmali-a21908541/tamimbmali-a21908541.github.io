@@ -1,20 +1,115 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  padding: 8px 16px;
-  font-family: "Times New Roman", serif;
-  font-size: 1.4rem;
-  background-color: lavender;
+  font-family: Arial, sans-serif;
+  background: #f2f5f7;
+  color: #20303c;
+}
+
+header,
+footer {
+  padding: 24px;
+  text-align: center;
+  background: #215a6d;
+  color: white;
+}
+
+header h1 {
+  margin: 0 0 8px;
+}
+
+header p,
+footer p {
+  margin: 0;
+}
+
+main {
+  padding: 36px 20px;
 }
 
 ol {
-  margin: 0;
-  padding-left: 1.6rem;
+  width: min(520px, 100%);
+  margin: 0 auto;
+  padding: 0;
+  list-style-position: inside;
 }
 
 li {
-  margin: 0 0 4.5rem;
+  margin-bottom: 16px;
+  padding: 18px 24px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px #20303c22;
 }
 
-li:last-child {
-  margin-bottom: 1rem;
+li div {
+  margin-top: 12px;
+}
+
+form {
+  display: inline;
+}
+
+a {
+  color: #215a6d;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #a8491e;
+}
+
+button {
+  margin: 6px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 6px;
+  background: #d66631;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #a8491e;
+}
+
+input,
+select {
+  padding: 8px 10px;
+  border: 1px solid #215a6d;
+  border-radius: 6px;
+}
+
+#passa {
+  font-weight: bold;
+}
+
+#contador,
+#automatico,
+#guardado {
+  font-weight: bold;
+  color: #d66631;
+}
+
+#ola {
+  margin: 12px 0 0;
+  font-weight: bold;
+}
+
+#caixa-flex {
+  display: flex;
+  gap: 10px;
+  height: 200px;
+  background: grey;
+  border-radius: 14px;
+}
+
+.bola {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #d66631;
 }

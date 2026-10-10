@@ -4,15 +4,37 @@
 
 body {
   margin: 0;
-  padding: 24px;
   font-family: Arial, sans-serif;
   background: #f2f5f7;
   color: #20303c;
 }
 
+header,
+footer {
+  padding: 24px;
+  text-align: center;
+  background: #215a6d;
+  color: white;
+}
+
+header h1 {
+  margin: 0 0 8px;
+}
+
+header p,
+footer p {
+  margin: 0;
+}
+
+main {
+  padding: 36px 20px;
+}
+
 ol {
   width: min(520px, 100%);
   margin: 0 auto;
+  padding: 0;
+  list-style-position: inside;
 }
 
 li {
@@ -27,6 +49,19 @@ li div {
   margin-top: 12px;
 }
 
+form {
+  display: inline;
+}
+
+a {
+  color: #215a6d;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #a8491e;
+}
+
 button {
   margin: 6px;
   padding: 10px 16px;
@@ -39,6 +74,17 @@ button {
 
 button:hover {
   background: #a8491e;
+}
+
+input,
+select {
+  padding: 8px 10px;
+  border: 1px solid #215a6d;
+  border-radius: 6px;
+}
+
+#passa {
+  font-weight: bold;
 }
 
 #contador,
