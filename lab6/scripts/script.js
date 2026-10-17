@@ -1,274 +1,95 @@
-/* ---------- Variáveis ---------- */
-:root {
-  --bg: #eef1f6;
-  --surface: #ffffff;
-  --surface-soft: #f9fafb;
-  --border: #d9dee7;
-  --text: #1f2937;
-  --muted: #6b7280;
-  --primary: #4f46e5;
-  --primary-dark: #4338ca;
-  --primary-soft: #eef2ff;
-  --primary-border: #c7d2fe;
-  --warning: #d97706;
-  --danger: #dc2626;
-  --danger-soft: #fef2f2;
-  --radius: 12px;
-  --shadow: 0 1px 3px rgba(16, 24, 40, 0.08), 0 8px 24px rgba(16, 24, 40, 0.06);
-}
+"use strict";
 
-/* ---------- Base: a página ocupa o ecrã e nunca faz scroll ---------- */
-* {
-  box-sizing: border-box;
-}
+// A. declaração de variáveis
+const nodeForm = document.querySelector("#colecao + section form");
+const nodeInputNumero = document.querySelector(
+  "#colecao + section input[type='number']",
+);
+// O enunciado pede esta constante, mas ainda não é usada
+// eslint-disable-next-line no-unused-vars
+const nodeInputSubmit = document.querySelector(
+  "#colecao + section button[type='submit']",
+);
+const nodeUlColecao = document.querySelector("#colecao ul");
+const nodeTotalCromos = document.querySelector("#colecao h3 span");
+const nodeUlRepetidos = document.querySelector("#repetidos ul");
+const nodeTotalRepetidos = document.querySelector("#repetidos h3 span");
+const colecao = JSON.parse(localStorage.getItem("colecao")) || [];
+const repetidos = JSON.parse(localStorage.getItem("repetidos")) || [];
+let contadorRepetidos = repetidos.length;
 
-html {
-  height: 100%;
-}
+// B. event handlers
+function guardaCarta() {
+  const numero = Number(nodeInputNumero.value);
 
-body {
-  margin: 0;
-  height: 100vh;
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  background-color: var(--bg);
-  color: var(--text);
-  font-family:
-    system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  line-height: 1.4;
-}
-
-/* ---------- Header e footer (compactos) ---------- */
-header {
-  flex-shrink: 0;
-  padding: 1rem;
-  text-align: center;
-  color: #ffffff;
-  background: linear-gradient(135deg, var(--primary), #7c3aed);
-}
-
-h1 {
-  margin: 0;
-  font-size: clamp(1.3rem, 3.5vw, 1.9rem);
-  letter-spacing: 0.02em;
-}
-
-footer {
-  flex-shrink: 0;
-  padding: 0.6rem 1rem;
-  text-align: center;
-  font-size: 0.8rem;
-  color: var(--muted);
-}
-
-/* ---------- Conteúdo principal: ocupa o espaço que sobra ---------- */
-main {
-  flex: 1;
-  min-height: 0;
-  width: min(1100px, calc(100% - 2rem));
-  margin: 1rem auto 0;
-  padding: 1rem;
-  display: grid;
-  grid-template-columns: 1fr 280px 1fr;
-  grid-template-rows: minmax(0, 1fr);
-  gap: 1rem;
-  background-color: var(--surface);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
-section {
-  min-height: 0;
-  margin: 0;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--surface-soft);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-}
-
-h2 {
-  flex-shrink: 0;
-  margin: 0 0 0.75rem;
-  padding-bottom: 0.5rem;
-  font-size: 1.05rem;
-  border-bottom: 1px solid var(--border);
-}
-
-/* ---------- Listas: o scroll acontece só dentro delas ---------- */
-ul {
-  flex: 1;
-  min-height: 0;
-  overflow-y: auto;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  gap: 0.5rem;
-  margin: 0 0 0.75rem;
-  padding: 0;
-  list-style: none;
-  scrollbar-width: thin;
-}
-
-ul:empty::before {
-  content: "Ainda sem cromos.";
-  color: var(--muted);
-  font-style: italic;
-}
-
-li {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.3rem 0.85rem;
-  font-weight: 600;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background-color: var(--surface);
-}
-
-#colecao li {
-  color: var(--primary-dark);
-  background-color: var(--primary-soft);
-  border-color: var(--primary-border);
-}
-
-#repetidos li {
-  padding-right: 0.3rem;
-}
-
-/* ---------- Totais ---------- */
-h3 {
-  flex-shrink: 0;
-  margin: 0;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--muted);
-}
-
-h3 span {
-  display: inline-block;
-  min-width: 1.9rem;
-  margin-left: 0.25rem;
-  padding: 0.1rem 0.6rem;
-  text-align: center;
-  font-weight: 700;
-  color: #ffffff;
-  background-color: var(--primary);
-  border-radius: 999px;
-}
-
-#repetidos h3 span {
-  background-color: var(--warning);
-}
-
-/* ---------- Formulário ---------- */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-input[type="number"] {
-  padding: 0.7rem 0.9rem;
-  font-size: 1rem;
-  color: var(--text);
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-}
-
-input[type="number"]:focus {
-  outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
-}
-
-input[type="submit"] {
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #ffffff;
-  background-color: var(--primary);
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition:
-    background-color 0.15s,
-    transform 0.05s;
-}
-
-input[type="submit"]:hover {
-  background-color: var(--primary-dark);
-}
-
-input[type="submit"]:active {
-  transform: translateY(1px);
-}
-
-input[type="submit"]:focus-visible,
-li button:focus-visible {
-  outline: 3px solid rgba(79, 70, 229, 0.4);
-  outline-offset: 2px;
-}
-
-/* ---------- Botão Eliminar ---------- */
-li button {
-  padding: 0.2rem 0.7rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--danger);
-  background-color: var(--danger-soft);
-  border: none;
-  border-radius: 999px;
-  cursor: pointer;
-  transition:
-    background-color 0.15s,
-    color 0.15s;
-}
-
-li button:hover {
-  color: #ffffff;
-  background-color: var(--danger);
-}
-
-/* ---------- Ecrãs estreitos: secções empilhadas, sem scroll da página ---------- */
-@media (max-width: 800px) {
-  header {
-    padding: 0.6rem 1rem;
+  if (colecao.includes(numero)) {
+    repetidos.push(numero);
+    repetidos.sort((a, b) => a - b);
+    contadorRepetidos += 1;
+    guardaDados();
+    atualizaLista(repetidos, nodeUlRepetidos);
+    nodeTotalRepetidos.textContent = contadorRepetidos;
+    associaEventosEliminacao();
+  } else {
+    colecao.push(numero);
+    colecao.sort((a, b) => a - b);
+    guardaDados();
+    atualizaLista(colecao, nodeUlColecao);
+    nodeTotalCromos.textContent = colecao.length;
   }
 
-  main {
-    margin-top: 0.5rem;
-    padding: 0.6rem;
-    gap: 0.6rem;
-    grid-template-columns: 1fr;
-    grid-template-rows: minmax(0, 1fr) auto minmax(0, 1fr);
-  }
-
-  section {
-    padding: 0.7rem;
-  }
-
-  h2 {
-    margin-bottom: 0.5rem;
-    padding-bottom: 0.35rem;
-    font-size: 0.95rem;
-  }
-
-  form {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  input[type="number"] {
-    flex: 1 1 8rem;
-  }
-
-  input[type="submit"] {
-    flex: 1 1 8rem;
-  }
+  nodeInputNumero.value = "";
+  nodeInputNumero.focus();
 }
+
+function atualizaLista(lista, nodeUl) {
+  nodeUl.textContent = "";
+
+  lista.forEach((numero) => {
+    const nodeLi = document.createElement("li");
+
+    if (lista === repetidos) {
+      nodeLi.innerHTML = `${numero} <button type="button" data-numero="${numero}">Eliminar</button>`;
+    } else {
+      nodeLi.textContent = numero;
+    }
+
+    nodeUl.append(nodeLi);
+  });
+}
+
+function guardaDados() {
+  localStorage.setItem("colecao", JSON.stringify(colecao));
+  localStorage.setItem("repetidos", JSON.stringify(repetidos));
+}
+
+// C. event listeners
+function associaEventosEliminacao() {
+  const nodeBotoesEliminar = document.querySelectorAll("#repetidos button");
+
+  nodeBotoesEliminar.forEach((botao) => {
+    botao.addEventListener("click", () => {
+      const numero = Number(botao.dataset.numero);
+      const indice = repetidos.indexOf(numero);
+
+      repetidos.splice(indice, 1);
+      contadorRepetidos -= 1;
+      guardaDados();
+      atualizaLista(repetidos, nodeUlRepetidos);
+      nodeTotalRepetidos.textContent = contadorRepetidos;
+      associaEventosEliminacao();
+    });
+  });
+}
+
+nodeForm.onsubmit = (event) => {
+  event.preventDefault();
+  guardaCarta();
+};
+
+// D. inicialização (ao carregar a página)
+atualizaLista(colecao, nodeUlColecao);
+nodeTotalCromos.textContent = colecao.length;
+atualizaLista(repetidos, nodeUlRepetidos);
+nodeTotalRepetidos.textContent = contadorRepetidos;
+associaEventosEliminacao();

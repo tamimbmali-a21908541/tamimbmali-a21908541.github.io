@@ -1,7 +1,7 @@
 /* ---------- Variáveis ---------- */
 :root {
   --bg: #eef1f6;
-  --surface: #ffffff;
+  --surface: #fff;
   --surface-soft: #f9fafb;
   --border: #d9dee7;
   --text: #1f2937;
@@ -14,10 +14,10 @@
   --danger: #dc2626;
   --danger-soft: #fef2f2;
   --radius: 12px;
-  --shadow: 0 1px 3px rgba(16, 24, 40, 0.08), 0 8px 24px rgba(16, 24, 40, 0.06);
+  --shadow: 0 1px 3px rgb(16 24 40 / 8%), 0 8px 24px rgb(16 24 40 / 6%);
 }
 
-/* ---------- Base: a página ocupa o ecrã e nunca faz scroll ---------- */
+
 * {
   box-sizing: border-box;
 }
@@ -36,16 +36,21 @@ body {
   background-color: var(--bg);
   color: var(--text);
   font-family:
-    system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
   line-height: 1.4;
 }
 
-/* ---------- Header e footer (compactos) ---------- */
+
 header {
   flex-shrink: 0;
   padding: 1rem;
   text-align: center;
-  color: #ffffff;
+  color: #fff;
   background: linear-gradient(135deg, var(--primary), #7c3aed);
 }
 
@@ -63,7 +68,7 @@ footer {
   color: var(--muted);
 }
 
-/* ---------- Conteúdo principal: ocupa o espaço que sobra ---------- */
+
 main {
   flex: 1;
   min-height: 0;
@@ -98,7 +103,7 @@ h2 {
   border-bottom: 1px solid var(--border);
 }
 
-/* ---------- Listas: o scroll acontece só dentro delas ---------- */
+
 ul {
   flex: 1;
   min-height: 0;
@@ -140,7 +145,7 @@ li {
   padding-right: 0.3rem;
 }
 
-/* ---------- Totais ---------- */
+
 h3 {
   flex-shrink: 0;
   margin: 0;
@@ -156,7 +161,7 @@ h3 span {
   padding: 0.1rem 0.6rem;
   text-align: center;
   font-weight: 700;
-  color: #ffffff;
+  color: #fff;
   background-color: var(--primary);
   border-radius: 999px;
 }
@@ -165,7 +170,28 @@ h3 span {
   background-color: var(--warning);
 }
 
-/* ---------- Formulário ---------- */
+
+li button {
+  padding: 0.2rem 0.7rem;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--danger);
+  background-color: var(--danger-soft);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+}
+
+li button:hover {
+  color: #fff;
+  background-color: var(--danger);
+}
+
+
 form {
   display: flex;
   flex-direction: column;
@@ -184,14 +210,15 @@ input[type="number"] {
 input[type="number"]:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+  box-shadow: 0 0 0 3px rgb(79 70 229 / 20%);
 }
 
-input[type="submit"] {
+button[type="submit"] {
   padding: 0.75rem 1rem;
+  font-family: inherit;
   font-size: 1rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #fff;
   background-color: var(--primary);
   border: none;
   border-radius: 8px;
@@ -201,42 +228,22 @@ input[type="submit"] {
     transform 0.05s;
 }
 
-input[type="submit"]:hover {
+button[type="submit"]:hover {
   background-color: var(--primary-dark);
 }
 
-input[type="submit"]:active {
+button[type="submit"]:active {
   transform: translateY(1px);
 }
 
-input[type="submit"]:focus-visible,
+button[type="submit"]:focus-visible,
 li button:focus-visible {
-  outline: 3px solid rgba(79, 70, 229, 0.4);
+  outline: 3px solid rgb(79 70 229 / 40%);
   outline-offset: 2px;
 }
 
-/* ---------- Botão Eliminar ---------- */
-li button {
-  padding: 0.2rem 0.7rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--danger);
-  background-color: var(--danger-soft);
-  border: none;
-  border-radius: 999px;
-  cursor: pointer;
-  transition:
-    background-color 0.15s,
-    color 0.15s;
-}
 
-li button:hover {
-  color: #ffffff;
-  background-color: var(--danger);
-}
-
-/* ---------- Ecrãs estreitos: secções empilhadas, sem scroll da página ---------- */
-@media (max-width: 800px) {
+@media (width <= 800px) {
   header {
     padding: 0.6rem 1rem;
   }
@@ -260,15 +267,11 @@ li button:hover {
   }
 
   form {
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
   }
 
-  input[type="number"] {
-    flex: 1 1 8rem;
-  }
-
-  input[type="submit"] {
+  input[type="number"],
+  button[type="submit"] {
     flex: 1 1 8rem;
   }
 }
