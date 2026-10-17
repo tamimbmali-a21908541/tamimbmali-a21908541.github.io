@@ -15,93 +15,135 @@
     </header>
 
     <main>
-      <ol>
-        <li><span id="passa">Passa por aqui!</span></li>
+      <section>
+        <h2>Eventos do rato</h2>
+        <ol>
+          <li><span id="passa">Passa por aqui!</span></li>
 
-        <li id="linha-cor">
-          Dá-me cor!
-          <div>
-            <button type="button" class="color" data-color="orange">
-              Orange
-            </button>
-            <button type="button" class="color" data-color="purple">
-              Purple
-            </button>
-            <button type="button" class="color" data-color="teal">Teal</button>
-          </div>
-        </li>
+          <li id="linha-cor">
+            Dá-me cor!
+            <div>
+              <button type="button" class="color" data-color="orange">
+                Orange
+              </button>
+              <button type="button" class="color" data-color="purple">
+                Purple
+              </button>
+              <button type="button" class="color" data-color="teal">
+                Teal
+              </button>
+            </div>
+          </li>
 
-        <li>
-          <label for="texto">Experimenta escrever...</label>
-          <div>
-            <input type="text" id="texto" />
-          </div>
-        </li>
+          <li>
+            <button type="button" id="conta">Conta!</button>
+            <span id="contador">0</span>
+          </li>
 
-        <li>
-          <label for="cor">Escolha uma cor:</label>
-          <select id="cor">
-            <option value="white">White</option>
-            <option value="red">Red</option>
-            <option value="blue">Blue</option>
-          </select>
-        </li>
+          <li id="caixa-duplo">
+            Faz duplo clique aqui: <span id="duplos">0</span>
+          </li>
 
-        <li>
-          <button type="button" id="conta">Conta!</button>
-          <span id="contador">0</span>
-        </li>
+          <li id="caixa-rato">
+            Move o rato dentro desta caixa: <span id="movimentos">0</span>
+          </li>
 
-        <li>
-          <form id="formulario">
-            <input
-              type="text"
-              id="nome"
-              placeholder="Insira o seu nome"
-              aria-label="Nome"
-            />
-            <input
-              type="number"
-              id="idade"
-              placeholder="Insira a sua idade"
-              aria-label="Idade"
-            />
-            <button type="submit">Submit</button>
-          </form>
-          <p id="ola"></p>
-        </li>
+          <li>
+            Contador guardado: <span id="guardado">0</span>
+            <div>
+              <button type="button" id="incrementar">Incrementar</button>
+              <button type="button" id="decrementar">Decrementar</button>
+              <button type="button" id="reset">Reset</button>
+            </div>
+          </li>
+        </ol>
+      </section>
 
-        <li>Automatic Counter: <span id="automatico">0</span></li>
+      <section>
+        <h2>Eventos do teclado</h2>
+        <ol>
+          <li>
+            <label for="texto">Experimenta escrever...</label>
+            <div>
+              <input type="text" id="texto" />
+            </div>
+          </li>
 
-        <li>
-          Contador guardado: <span id="guardado">0</span>
-          <div>
-            <button type="button" id="incrementar">Incrementar</button>
-            <button type="button" id="decrementar">Decrementar</button>
-            <button type="button" id="reset">Reset</button>
-          </div>
-        </li>
+          <li>
+            <span id="frase">Colori-me em inglês!</span>
+            <div>
+              <label for="cor-tecla">Escreve uma cor:</label>
+              <input type="text" id="cor-tecla" />
+            </div>
+          </li>
+        </ol>
+      </section>
 
-        <li>
-          <label for="direcao">Direção das bolas:</label>
-          <select id="direcao">
-            <option value="row">row</option>
-            <option value="row-reverse">row-reverse</option>
-            <option value="column">column</option>
-            <option value="column-reverse">column-reverse</option>
-          </select>
-          <div id="caixa-flex">
-            <div class="bola"></div>
-            <div class="bola"></div>
-            <div class="bola"></div>
-            <div class="bola"></div>
-          </div>
-        </li>
-      </ol>
+      <section>
+        <h2>Eventos de formulário</h2>
+        <ol>
+          <li>
+            <label for="cor">Escolha uma cor:</label>
+            <select id="cor">
+              <option value="white">White</option>
+              <option value="red">Red</option>
+              <option value="blue">Blue</option>
+            </select>
+          </li>
+
+          <li>
+            <label for="direcao">Direção das bolas:</label>
+            <select id="direcao">
+              <option value="row">row</option>
+              <option value="row-reverse">row-reverse</option>
+              <option value="column">column</option>
+              <option value="column-reverse">column-reverse</option>
+            </select>
+            <div id="caixa-flex">
+              <div class="bola"></div>
+              <div class="bola"></div>
+              <div class="bola"></div>
+              <div class="bola"></div>
+            </div>
+          </li>
+
+          <li>
+            <form id="formulario">
+              <input
+                type="text"
+                id="nome"
+                placeholder="Insira o seu nome"
+                aria-label="Nome"
+              />
+              <input
+                type="number"
+                id="idade"
+                placeholder="Insira a sua idade"
+                aria-label="Idade"
+              />
+              <button type="submit">Submit</button>
+            </form>
+            <p id="ola"></p>
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Eventos de janela</h2>
+        <ol>
+          <li><span id="carregou">A página está a carregar...</span></li>
+
+          <li>Scroll: <span id="scrolls">0</span> eventos</li>
+
+          <li>Janela redimensionada <span id="redimensoes">0</span> vezes</li>
+
+          <li>Automatic Counter: <span id="automatico">0</span></li>
+        </ol>
+      </section>
     </main>
 
     <footer>
-      <p>DIW - Eventos JS em detalhe</p>
+      <p>DIW - Eventos com JavaScript</p>
     </footer>
   </body>
 </html>
