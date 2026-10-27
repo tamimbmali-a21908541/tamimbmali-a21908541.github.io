@@ -49,14 +49,11 @@ nav a {
   letter-spacing: 0.13em;
   text-decoration: none;
   text-transform: uppercase;
+  transition: color 0.2s ease;
 }
 
 nav a:hover {
   color: #1769aa;
-}
-
-nav a {
-  transition: color 0.2s ease;
 }
 
 main {
@@ -80,14 +77,16 @@ article {
   padding: 1.5rem;
   border: 1px solid #d9dde1;
   border-radius: 0;
-  background: #ffffff;
-  box-shadow: 0 0.55rem 1.8rem rgba(11, 13, 16, 0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: #fff;
+  box-shadow: 0 0.55rem 1.8rem rgb(11 13 16 / 8%);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 article:hover {
   transform: translateY(-0.25rem);
-  box-shadow: 0 1rem 2.2rem rgba(11, 13, 16, 0.15);
+  box-shadow: 0 1rem 2.2rem rgb(11 13 16 / 15%);
 }
 
 article img {
@@ -132,7 +131,9 @@ button {
   text-transform: uppercase;
   cursor: pointer;
   background: #0b0d10;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
 }
 
 button:hover {
@@ -145,7 +146,7 @@ footer {
   background: #0b0d10;
 }
 
-@media (max-width: 650px) {
+@media (width <= 650px) {
   header {
     flex-direction: column;
     align-items: flex-start;
